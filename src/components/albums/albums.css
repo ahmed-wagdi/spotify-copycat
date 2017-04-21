@@ -1,0 +1,23 @@
+.album__side{
+	width: 300px;
+	padding: 10px;
+	float: left;
+	text-align: center;
+}
+
+.album__title{
+	font-size: 26px;
+	font-weight: bold
+}
+
+.album__title div{
+	font-size: .8em;
+	color: gray;
+	font-weight: 100;
+}
+
+.album__main{
+	width: calc(100% - 300px);
+	padding: 10px;
+	float: left;
+}

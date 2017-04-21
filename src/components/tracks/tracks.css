@@ -1,0 +1,30 @@
+.tracklist{
+	width: 100%;
+	border-spacing: 0;
+}
+
+.tracklist__cell{
+	padding: 10px;
+}
+
+.tracklist__number, .tracklist__time{
+	opacity: .5;
+	transition: opacity .3s;
+}
+
+.tracklist__item{
+	cursor: pointer;
+	transition: background-color .3s;
+}
+
+.tracklist__item:hover{
+	background-color: rgba(0,0,0, 0.4);
+}
+
+.tracklist__item.active{
+	color: #219042;
+}
+
+.active .tracklist__number, .active .tracklist__time{
+	opacity: 1;
+}
