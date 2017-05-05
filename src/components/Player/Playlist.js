@@ -1,7 +1,8 @@
 import React from 'react';
 import Tracklist from '../tracks/Tracklist'
+import {connect} from 'react-redux';
 
-export default class Playlist extends React.Component{
+class Playlist extends React.Component{
 	render(){
 		if (!this.props.playlist.length) {
 			return (
@@ -12,11 +13,22 @@ export default class Playlist extends React.Component{
 			)
 		}
 		return(
-			<Tracklist 
-			tracks={this.props.playlist} 
-			addPlaylist={this.props.addPlaylist} 
-			current={this.props.current} 
-			/>
+			<div className="queue">
+				<h1>Current Queue</h1>
+				<Tracklist 
+				tracks={this.props.playlist} 
+				addPlaylist={this.props.addPlaylist} 
+				current={this.props.current} 
+				/>
+			</div>
 		)
 	}
 }
+
+function mapStateToProps(state){
+	return{
+		playlist : state.player.queue
+	}
+}
+
+export default connect(mapStateToProps)(Playlist);

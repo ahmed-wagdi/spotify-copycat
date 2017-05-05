@@ -9,7 +9,6 @@ const Progress = props => {
 			width = e.target.offsetParent.clientWidth;
 
 			const pos = seekPos / width;
-			console.log(pos);
 			props.seekTrack(pos)
 	}
 	return (

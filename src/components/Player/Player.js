@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-
+import {connect} from 'react-redux';
 import Progress from './Progress';
+import {nextTrack, prevTrack, addNotification} from '../../actions';
 
 import './player.css';
 
-export default class Player extends React.Component {
+class Player extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -23,9 +24,15 @@ export default class Player extends React.Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (nextProps.current.id !== this.props.current.id) {
+		if (this.props.current && nextProps.current.id !== this.props.current.id) {
 			this.setState({playing: true});
-			this.image = nextProps.current.album.images.length && nextProps.current.album.images[0].url
+		}
+
+		if (!nextProps.current.preview_url) this.noTrack();
+
+		const count = nextProps.current.album.images.length;
+		if (count > 0) {
+			this.image = nextProps.current.album.images[count-1].url;
 		}
 	}
 
@@ -52,8 +59,18 @@ export default class Player extends React.Component {
 		}
 	}
 
+	noTrack(){
+		this.props.addNotification({
+			type: "error",
+			text: "This track has no preview"
+		})
+	}
+
 	render(){
 		const { current } = this.props;
+		if (!current) return null;
+
+
 		return(
 			<div className="player-wrapper">
 				<div className="music-player">
@@ -69,13 +86,13 @@ export default class Player extends React.Component {
 					<div className="player-controls">
 						<div className="player-controls__buttons">
 							
-							<a className="player-controls__button" onClick={this.props.prevTrack}><i className="fa fa-backward" aria-hidden="true"></i>
+							<a className="player-controls__button" onClick={this.props.prevTrack}><i className="icon-to-start" aria-hidden="true"></i>
 							</a>
 
-							<a className="player-controls__button" onClick={this.playPause}><i className={`fa fa-${this.state.playing ? "pause" : "play"}`} aria-hidden="true"></i>
+							<a className="player-controls__button" onClick={this.playPause}><i className={`icon-${this.state.playing ? "pause" : "play"}`} aria-hidden="true"></i>
 							</a>
 
-							<a className="player-controls__button" onClick={this.props.nextTrack}><i className="fa fa-forward" aria-hidden="true"></i>
+							<a className="player-controls__button" onClick={this.props.nextTrack}><i className="icon-to-end" aria-hidden="true"></i>
 							</a>
 						
 						</div>
@@ -94,3 +111,13 @@ export default class Player extends React.Component {
 		)
 	}
 }
+
+function mapStateToProps(state){
+	return {
+		queue: state.player.queue,
+		index: state.player.index,
+		current: state.player.queue[state.player.index]
+	}
+}
+
+export default connect(mapStateToProps, {nextTrack, prevTrack, addNotification})(Player);

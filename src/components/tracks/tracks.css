@@ -28,3 +28,8 @@
 .active .tracklist__number, .active .tracklist__time{
 	opacity: 1;
 }
+
+.no_preview{
+	color: gray;
+	text-transform: uppercase;
+}

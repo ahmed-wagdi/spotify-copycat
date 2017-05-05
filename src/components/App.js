@@ -6,26 +6,14 @@ import SingleArtist from './artists/Single.js';
 import Playlist from './Player/Playlist.js';
 import Home from './Home.js';
 import Player from './Player/Player.js';
-import './app.css';
-
+import Notifications from './Notifications/Notifications.js';
 import history from './history';
+
 
 import logo from '../images/logo.png';
 
 class App extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			playlist: [],
-			current: {},
-			currentIndex: 0
-		}
 
-		this.playTrack = this.playTrack.bind(this);
-		this.addPlaylist = this.addPlaylist.bind(this);
-		this.prevTrack = this.prevTrack.bind(this);
-		this.nextTrack = this.nextTrack.bind(this);
-	}
 
 	addPlaylist(playlist, currentIndex){
 		this.setState({playlist, current: playlist[currentIndex], currentIndex});
@@ -55,55 +43,24 @@ class App extends React.Component {
 		}
 	}
 
-	renderPlayer(){
-		if (this.state.current.name) {
-			return <Player prevTrack={this.prevTrack} nextTrack={this.nextTrack} {...this.state} />
-		}
-	}
-
 	render(){
 		return(
-			<BrowserRouter>
+			<BrowserRouter history={history}>
 				<div className="container">
 					<div className="content-wrap">
 						<Links></Links>
+						<Notifications />
 						<div className="main-content">
-							{this.renderPlayer()}
-
-							<Route path="/queue" render={ routeProps => (
-								<Playlist 
-								{...this.state} 
-								{...routeProps} 
-								addPlaylist={this.addPlaylist} />
-								)} />
-
-							<Main playlist={this.state.playlist} current={this.state.current} currentIndex={this.state.currentIndex}  playTrack={this.playTrack} addPlaylist={this.addPlaylist} />
+							<Route exact path="/" component={Home} />
+							<Player />
+	                        <Route path="/queue" component={Playlist} />
+							<Route path="/search/:type?" component={Search} />
+							<Route path="/album/:id?" component={SingleAlbum} />
+							<Route path="/artist/:id?" component={SingleArtist} />
 						</div>
 					</div>
 				</div>
 			</BrowserRouter>
-		);
-	}
-}
-
-
-class Main extends React.Component {
-	
-	// shouldComponentUpdate(nextProps, nextState) {
-	// 	if (nextProps.current === this.props.current) {
-	// 		return true;
-	// 	}
-	// 	return false;
-	// }
-
-	render(){
-		return(
-			<div>
-				<Route exact path="/" component={Home} />
-				<Route path="/search/:type?" component={Search} />
-				<Route path="/album/:id?" render={ routeProps => <SingleAlbum current={this.props.current} {...routeProps} addPlaylist={this.props.addPlaylist} /> } />
-				<Route path="/artist/:id?" render={ routeProps => <SingleArtist current={this.props.current} {...routeProps} addPlaylist={this.props.addPlaylist} /> } />
-			</div>
 		);
 	}
 }
@@ -123,11 +80,5 @@ const Links = () => (
 		<a className="sidebar__user"><i className="fa fa-user-o" aria-hidden="true"></i> Ahmed Wagdi</a>
 	</nav>
 );
-
-// const Router = () => (
-// 	<BrowserRouter>
-// 		<App className="container" />
-// 	</BrowserRouter>
-// );
 
 export default App;

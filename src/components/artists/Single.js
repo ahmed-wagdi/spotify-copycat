@@ -20,8 +20,6 @@ export default class SingleArtist extends React.Component {
 	}
 
 	shouldComponentUpdate(nextProps, nextState) {
-		console.log(this.state);
-		console.log(nextState);
 		return true;
 // 		return this.state.tracks.length < nextState.tracks.length || this.state.albums.length <
 // nextState.albums.length;
