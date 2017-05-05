@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const AlbumItem = props => {
 	const image = props.album.images.length ? props.album.images[0].url : "";
 	return (
-	<div className="item-list__item album">
+	<div className={`item-list__item album ${props.horizontal && "item-list__item--horizontal"}`}>
 		<Link to={`/album/${props.album.id}`}>
 			<div className="image-wrapper">
 				<i className="icon-music-outline item-list__icon"></i>

@@ -5,9 +5,9 @@ export default function playerReducer(state = { queue: [], index: 0}, action){
 		case ADD_PLAYLIST:
 			return {queue: action.tracks, index: action.index}
 		case NEXT_TRACK:
-			return {...state, index: state.index + 1}
+			return {...state, index: (state.index+1)%state.queue.length}
 		case PREV_TRACK:
-			return {...state, index: state.index - 1}
+			return {...state, index: state.index ? state.index - 1 : 0}
 		default:
 			return state;	
 	}

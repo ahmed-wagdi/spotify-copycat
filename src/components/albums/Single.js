@@ -20,6 +20,9 @@ export default class SingleAlbum extends React.Component {
 		const album_id = this.props.match.params.id;
 		const url = `${API_URL}/albums/${album_id}`;
 		axios.get(url).then(response => {
+			const album = {...response.data}
+			delete album.tracks;
+			response.data.tracks.items.map(item => item.album = album);
 			this.setState({album: response.data})
 		})
 	}

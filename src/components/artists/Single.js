@@ -76,7 +76,7 @@ export default class SingleArtist extends React.Component {
 				</div>
 				<div className="artist-albums">
 					<h2 className="section-title">Albums</h2>
-					{this.state.albums.length > 0 && <Albums albums={this.state.albums} />}
+					{this.state.albums.length > 0 && <Albums horizontal albums={this.state.albums} />}
 				</div>
 			</div>
 		)

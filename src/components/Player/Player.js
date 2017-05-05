@@ -26,6 +26,7 @@ class Player extends React.Component {
 	componentWillReceiveProps(nextProps) {
 		if (this.props.current && nextProps.current.id !== this.props.current.id) {
 			this.setState({playing: true});
+			clearTimeout(this.autoNext);
 		}
 
 		if (!nextProps.current.preview_url) this.noTrack();
@@ -50,7 +51,7 @@ class Player extends React.Component {
 	}
 
 	handleEnded(){
-		if (this.props.currentIndex === this.props.playlist.length -1) {
+		if (this.props.index === this.props.queue.length -1) {
 			this.player.seekTo(0);
 			this.setState({playing: false, played: 0, progress: 0});
 		}
@@ -63,7 +64,8 @@ class Player extends React.Component {
 		this.props.addNotification({
 			type: "error",
 			text: "This track has no preview"
-		})
+		});
+		this.autoNext = setTimeout(this.props.nextTrack, 2000);
 	}
 
 	render(){
@@ -105,6 +107,8 @@ class Player extends React.Component {
 					url={current.preview_url} 
 					onEnded={this.handleEnded}
 					onProgress={this.onProgress} 
+					progressFrequency={10}
+					hidden
 					height="auto" />
 				</div>
 			</div>

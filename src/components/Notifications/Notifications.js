@@ -39,7 +39,7 @@ class Notification extends React.Component{
 		setTimeout(() => this.setState({state: ""}));
 		setTimeout(() => {
 			if(this.refs.notification) this.setState({state: "leave"})
-		}, 2000);
+		}, 4000);
 	}
 
 

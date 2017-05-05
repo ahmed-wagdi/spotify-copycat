@@ -12,6 +12,13 @@
 	margin-right: 10px;
 }
 
+.button--small{
+	padding: 4px 10px;
+	font-size: 12px;
+	text-transform: initial;
+	letter-spacing: 0;
+}
+
 .button:hover{
 	color: white;
 	background-color: #219042;
@@ -24,6 +31,11 @@
 
 .button--transparent:hover{
 	background-color: rgba(0,0,0,0.5);
+}
+
+.button--gray{
+	color: #219042;
+	background-color: #3a3a3a;
 }
 
 .container{
@@ -149,6 +161,15 @@
 	margin: -1em 0 0 -1em;
 }
 
+.list-wrap{
+}
+
+/*.item-list--horizontal{
+	flex-wrap: nowrap;
+	overflow: auto;
+	margin-right: -40px;
+}*/
+
 .item-list a:hover{
 	color: white;
 }
@@ -160,15 +181,22 @@
 	margin-bottom: 35px;
 
 }
+
 @media screen and (max-width:1000px){
 	.item-list__item{
 		width: 33.33333%;
 	}
 }
 
+/*.item-list__item--horizontal{
+	margin-right: 20px;
+}
+.item-list__item--horizontal .image-container{
+	width: 350px;
+}
+*/
 .item-list__title{
 	color: white;
-	/*font-weight: 600;*/
 	font-size: 20px
 }
 
