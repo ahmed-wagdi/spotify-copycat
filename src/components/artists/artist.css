@@ -6,8 +6,9 @@
 .artist__image{
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 50% 25%;
+	background-position: 50% 33%;
 	padding-top: 35%;
+	min-height: 400px;
 	position: relative;
 }
 
@@ -54,7 +55,76 @@
 	padding: 40px;
 }
 
+
+.artist-content .button-container{
+	display: none;
+}
+
+.artist .button-container{
+	display: flex;
+	align-items: center;
+}
+.button-container .button{
+	margin-right: 10px;
+
+}
+
 .artist-albums{
 	background-color: rgba(0,0,0, 0.3);
 	padding: 40px;
+}
+
+
+.genres-container{
+	margin-left: auto;
+	list-style: none;
+	display: flex;
+}
+
+.genres-container h6{
+	color: #2EBD59;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+.genres{
+	margin: 0;
+}
+.genres__item{
+	display: inline-block;
+	margin-right: 10px;
+	text-transform: capitalize;
+}
+
+.genres__item a:hover{
+	color: white;
+	text-decoration: underline;
+}
+
+.genres__item:not(:last-child):after{
+	content: ", ";
+}
+
+@media screen and (max-width: 500px){
+	.artist__title{
+		font-size: 40px;
+	}
+
+	.artist-content, .artist-albums{
+		padding: 10px;
+	}
+
+	.artist-content .button-container{
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	.artist .button{
+		display: none;
+	}
+
+	.genres-container{
+		margin-left: 0;
+		margin-top: 15px;
+	}
 }

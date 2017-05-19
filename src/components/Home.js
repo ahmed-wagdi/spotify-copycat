@@ -16,8 +16,9 @@ export default class Home extends React.Component{
 
 	componentDidMount() {
 		const limit = 50;
-		const url = `${API_URL}/search?q=j&type=artist&limit=${limit}`;
-		axios.get(url).then(response => this.setState({artists: response.data.artists.items}));
+		const artists = `1Xyo4u8uXC1ZmMpatF05PJ,4gzpq5DPGxSnKTe4SA8HAU,4Z8W4fKeB5YxbusRsdQVPb,1moxjboGR7GNWYIMWsRjgG,3WrFJ7ztbogyGnTHbHJFl2,711MCceyCBcFnzjGY4Q7Un,0du5cEVh5yTK9QJze8zA0C,6l3HvQ5sa6mXTsMTB19rO5,6FQqZYVfTNQ1pCqfkwVFEa,3kjuyTCjPG1WMFCiyc5IuB,6eUKZXaKkcviH0Ku9w2n3V,7jdFEYD2LTYjfwxOdlVjmc`
+		const url = `${API_URL}/artists?ids=${artists}&limit=${limit}`;
+		axios.get(url).then(response => this.setState({artists: response.data.artists}));
 	}
 
 

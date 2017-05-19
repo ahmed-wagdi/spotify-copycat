@@ -97,6 +97,7 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
+	text-align: center;
 }
 
 .empty-queue p{
@@ -105,6 +106,12 @@
 	font-weight: bold;
 	margin: 0;
 	line-height: 1;
+}
+
+@media screen and (max-width: 600px){
+	.empty-queue p{
+		font-size: 40px
+	}
 }
 
 .empty-queue small{

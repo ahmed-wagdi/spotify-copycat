@@ -13,7 +13,7 @@ function Tracklist(props){
 						<td className="tracklist__cell tracklist__number">{i+1}.</td>
 						<td className="tracklist__cell tracklist__title">{track.name}</td>
 						<td className="tracklist__cell tracklist__title no_preview">{track.preview_url === null && "No track preview"}</td>
-						<td className="tracklist__cell tracklist__time"><a href={track.external_urls.spotify} target="_blank" className="button button--gray button--small">Full Track</a></td>
+						<td className="tracklist__cell tracklist__full"><a href={track.external_urls.spotify} target="_blank" className="button button--gray button--small">Full Track</a></td>
 					</tr>
 				))}
 			</tbody>

@@ -4,7 +4,7 @@
 }
 
 .tracklist__cell{
-	padding: 10px;
+	padding: 10px 0;
 }
 
 .tracklist__number{
@@ -25,11 +25,26 @@
 	color: #219042;
 }
 
-.active .tracklist__number, .active .tracklist__time{
+.active .tracklist__number, .active .tracklist__full{
 	opacity: 1;
+}
+
+.tracklist__full .button{
+	width: 75px;
 }
 
 .no_preview{
 	color: gray;
 	text-transform: uppercase;
+}
+
+@media screen and (max-width: 500px){
+	.tracklist__number, .no_preview{
+		display: none;
+	}
+
+	.tracklist__cell{
+		font-size: 12px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.09)
+	}
 }
