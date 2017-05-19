@@ -1,8 +1,10 @@
 {
-  "name": "musicApp",
-  "version": "0.1.0",
+  "name": "spotify-copycat",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://ahmed-wagdi.github.io/spotify-copycat",
   "devDependencies": {
+    "gh-pages": "^1.0.0",
     "node-sass": "^4.5.0",
     "react-scripts": "0.9.5",
     "sass-loader": "^6.0.3"
@@ -23,6 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy" : "npm run build&&gh-pages -d build"
   }
 }
