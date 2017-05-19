@@ -1,8 +1,7 @@
-Music streaming application that uses the (Spotify Web API)[https://developer.spotify.com/web-api/].
+Music streaming application that uses the [Spotify Web API](https://developer.spotify.com/web-api/).
 
 Technologies Used:
 - React
 - React Router
 - React Player
 - Redux
-- Axios
