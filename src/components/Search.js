@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {Loader} from './shared';
+// import {Loader} from './shared';
 import Albums from './albums/Albums';
 import ArtistList from './artists/ArtistList';
 import {addNotification, search, clearResults} from '../actions';
@@ -85,7 +85,6 @@ class Search extends React.Component {
 	render(){
 		return(
 			<div className="main-wrap">
-				<Loader />
 				<h5>Search for {this.state.type}</h5>
 				<form className="search-form" onSubmit={(event) => this.handleSubmit(event)}>
 					<input type="text" placeholder="Search..." ref="search"  />

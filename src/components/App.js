@@ -47,13 +47,13 @@ class App extends React.Component {
 						<Menu toggleMenu={this.toggleMenu} open={this.state.small_menu} />
 						<Notifications />
 						<div className={`main-content ${this.state.small_menu ? 'menu-open' : ''} ${this.props.queue.length ? 'player-active' : ""}`}>
-							<Route exact path="/" component={Home} />
+							<Route exact path="/spotify-copycat/" component={Home} />
 							<Player />
-	                        <Route path="/queue" component={Playlist} />
-							<Route path="/search/:type?" component={Search} />
-							<Route path="/genres/:genre?" component={Genres} />
-							<Route path="/album/:id?" component={SingleAlbum} />
-							<Route path="/artist/:id?" component={SingleArtist} />
+	                        <Route path="/spotify-copycat/queue" component={Playlist} />
+							<Route path="/spotify-copycat/search/:type?" component={Search} />
+							<Route path="/spotify-copycat/genres/:genre?" component={Genres} />
+							<Route path="/spotify-copycat/album/:id?" component={SingleAlbum} />
+							<Route path="/spotify-copycat/artist/:id?" component={SingleArtist} />
 						</div>
 					</div>
 				</div>
@@ -74,10 +74,10 @@ const Menu = (props) => (
 			<div>
 				<img className="logo" src={logo} alt=""/>
 				<ul className="main-menu" onClick={(e) => props.toggleMenu(true)}>
-					<li className="main-menu__item"><NavLink exact activeClassName="active" className="main-menu__link" to="/">Home</NavLink></li>
-					<li className="main-menu__item"><NavLink exact activeClassName="active" className="main-menu__link" to="/search/albums">Albums</NavLink></li>
-					<li className="main-menu__item"><NavLink exact activeClassName="active" className="main-menu__link" to="/search/artists">Artists</NavLink></li>
-					<li className="main-menu__item"><NavLink exact activeClassName="active" className="main-menu__link" to="/queue">Queue</NavLink></li>
+					<li className="main-menu__item"><NavLink exact activeClassName="active" className="main-menu__link" to="/spotify-copycat/">Home</NavLink></li>
+					<li className="main-menu__item"><NavLink exact activeClassName="active" className="main-menu__link" to="/spotify-copycat/search/albums">Albums</NavLink></li>
+					<li className="main-menu__item"><NavLink exact activeClassName="active" className="main-menu__link" to="/spotify-copycat/search/artists">Artists</NavLink></li>
+					<li className="main-menu__item"><NavLink exact activeClassName="active" className="main-menu__link" to="/spotify-copycat/queue">Queue</NavLink></li>
 				</ul>
 			</div>
 
