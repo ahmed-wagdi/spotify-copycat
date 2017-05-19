@@ -8,7 +8,8 @@ import Playlist from './Player/Playlist.js';
 import Home from './Home.js';
 import Player from './Player/Player.js';
 import Notifications from './Notifications/Notifications.js';
-import history from './history';
+import {connect} from 'react-redux';
+
 
 
 import logo from '../images/logo.png';
@@ -18,7 +19,6 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			small: false,
 			small_menu: false
 		}
 		this.toggleMenu = this.toggleMenu.bind(this);
@@ -41,12 +41,12 @@ class App extends React.Component {
 
 	render(){
 		return(
-			<BrowserRouter history={history}>
+			<BrowserRouter>
 				<div className="container">
 					<div className="content-wrap">
 						<Menu toggleMenu={this.toggleMenu} open={this.state.small_menu} />
 						<Notifications />
-						<div className={`main-content ${this.state.small_menu ? 'menu-open' : ''}`}>
+						<div className={`main-content ${this.state.small_menu ? 'menu-open' : ''} ${this.props.queue.length ? 'player-active' : ""}`}>
 							<Route exact path="/" component={Home} />
 							<Player />
 	                        <Route path="/queue" component={Playlist} />
@@ -86,4 +86,11 @@ const Menu = (props) => (
 	</div>
 );
 
-export default App;
+
+function mapStateToProps(state){
+	return {
+		queue: state.player.queue,
+	}
+}
+
+export default connect(mapStateToProps)(App);

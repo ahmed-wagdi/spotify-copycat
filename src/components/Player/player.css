@@ -18,6 +18,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+	max-width: 250px;
 }
 
 .current-track__image{
@@ -25,10 +26,17 @@
 	margin-right: 10px;
 }
 
+.current-track__image .image-container{
+	margin-bottom: 0;
+}
+
 .current-track__details{
 	flex: 1;
 }
 
+.current-track h6{
+	margin-bottom: 0;
+}
 .music-player video{
 	display: none !important;
 }
@@ -40,18 +48,6 @@
 	align-items: center;
 }
 
-.progress__time{
-	/*position: absolute;*/
-	/*bottom: 0;*/
-}
-
-/*.progress__time--current{
-	right: 103%;
-}
-
-.progress__time--total{
-	left: 103%;
-}*/
 
 .progress__bar{
 	background: dimgray;
@@ -108,12 +104,6 @@
 	line-height: 1;
 }
 
-@media screen and (max-width: 600px){
-	.empty-queue p{
-		font-size: 40px
-	}
-}
-
 .empty-queue small{
 	color: #1ed760;
 	opacity: .8;
@@ -128,4 +118,41 @@
 	top: 50%;
 	left: 0;
 	transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1050px){
+	.current-track{
+		position: static;
+		flex: 2;
+		max-width: none;
+	}
+	.music-player{
+		display: flex;
+		justify-content: space-between;
+	}
+	.player-controls{
+		margin: 0;
+		margin-left: 20px;
+		flex: 3;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.progress{
+		display: none;
+	}
+
+	.player-controls{
+		flex: initial;
+	}
+}
+
+@media screen and (max-width: 600px){
+	.player-wrapper{
+		padding: 10px;
+	}
+
+	.player-controls__button:not(:last-child){
+		margin-right: 20px;
+	}
 }
