@@ -1,8 +1,7 @@
 var CACHE_NAME = 'my-pwa-cache-v1';
 var urlsToCache = [
-  '/',
-  '/styles/styles.css',
-  '/static/js/bundle.js'
+  '/spotify-copycat',
+  '/spotify-copycat/static/js/bundle.js'
 ];
 
 self.addEventListener('install', function(event) {
@@ -19,8 +18,8 @@ self.addEventListener('fetch', function(event) {
     // console.log(event.request.url);
     event.respondWith(
         caches.match(event.request).then(function(response) {
-        console.log("caches");
-          console.log(response || fetch(event.request));
+        // console.log("caches");
+        //   console.log(response || fetch(event.request));
             return response || fetch(event.request);
         })
     );
