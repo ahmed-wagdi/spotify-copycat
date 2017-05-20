@@ -1,7 +1,8 @@
 var CACHE_NAME = 'my-pwa-cache-v1';
 var urlsToCache = [
-  '/spotify-copycat',
-  '/spotify-copycat/static/js/bundle.js'
+    'build/*.html',
+    'build/manifest.json',
+    'build/static/**/!(*map*)'
 ];
 
 self.addEventListener('install', function(event) {
