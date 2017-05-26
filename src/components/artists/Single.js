@@ -74,7 +74,7 @@ export default class SingleArtist extends React.Component {
 								{ artist.genres.length > 0 && <div className="genres-container">
 									<h6>Genres:</h6>
 									<ul className="genres">{
-										artist.genres.slice(0, 4).map((genre, i) => <li className="genres__item" key={i}><Link to={`/spotify-copycat/genres/${genre}`}>{genre}</Link></li>)
+										artist.genres.slice(0, 4).map((genre, i) => <li className="genres__item" key={i}><Link to={`/genres/${genre}`}>{genre}</Link></li>)
 									}</ul>
 								</div>}
 							</div>
