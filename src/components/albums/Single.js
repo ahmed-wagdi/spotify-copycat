@@ -39,7 +39,7 @@ export default class SingleAlbum extends React.Component {
 					<img src={album.images[0].url} alt=""/>
 					<h1 className="album__title">{album.name} <div>{album.artists[0].name}</div></h1>
 					<p className="album__total">{album.tracks.total} tracks</p>
-					<Link className="button" to={`/artist/${album.artists[0].id}`}>Artist Profile</Link>
+					<Link className="button" to={`/spotify-copycat/artist/${album.artists[0].id}`}>Artist Profile</Link>
 				</div>
 				<div className="album__main">
 					<Tracklist playTrack={this.props.playTrack} current={this.props.current} tracks={album.tracks.items} />
