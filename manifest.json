@@ -1,0 +1,23 @@
+{
+  "name": "SpotifyCopycat",
+  "short_name": "SpotifyCopycat",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A Spotify progressive web app.",
+  "icons": [{
+    "src": "../src/images/logo-small.png",
+    "sizes": "150x150",
+    "type": "image/png"
+  }, {
+    "src": "images/logo.png",
+    "sizes": "500x150",
+    "type": "image/png"
+  }],
+  "related_applications": [{
+    "platform": "web"
+  }, {
+    "platform": "play",
+    "url": "https://ahmed-wagdi.github.io/spotify-copycat/"
+  }]
+}
