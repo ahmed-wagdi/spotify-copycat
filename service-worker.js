@@ -68,6 +68,7 @@ self.addEventListener('install', function(event) {
               // We could also cache any static assets like CSS or images
               const urlsToCache = [
                 "/",
+                "https://p.scdn.co/mp3-preview/",
                 assets["main.js"]
               ]
               cache.addAll(urlsToCache)
