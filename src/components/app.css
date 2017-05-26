@@ -81,7 +81,7 @@
 }
 
 .menu-icon{
-	position: absolute;
+	position: fixed;
 	z-index: 1000;
 	top: 20px;
 	left: 10px;
@@ -126,44 +126,7 @@
 	bottom: 0;
 	z-index: 10;
 }
-@media screen and (max-width:700px){
-	.menu-icon{
-		display: inline-block;
-	}
 
-	.sidebar{
-		position: absolute;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		z-index: 1000;
-		background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.9));
-		transform: translateX(-200px);
-		transition: transform 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
-	}
-
-	.open .sidebar{
-		transform: translateX(0);
-	}
-	/*.sidebar{
-		width: 0;
-	}
-
-	.logo{
-		display: none;
-	}
-
-	.small_menu{
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-	}*/
-
-	
-}
 
 .main-content{
 	flex: 1;
@@ -182,12 +145,6 @@
 
 .main-wrap{
 	padding: 30px;
-}
-
-@media screen and (max-width: 700px){
-	.main-wrap{
-		padding-top: 90px;
-	}
 }
 
 .main-menu{
@@ -292,17 +249,7 @@
 
 }
 
-@media screen and (max-width:1000px){
-	.item-list__item{
-		width: 33.33333%;
-	}
-}
 
-@media screen and (max-width:600px){
-	.item-list__item{
-		width: 50%;
-	}
-}
 
 /*.item-list__item--horizontal{
 	margin-right: 20px;
@@ -383,4 +330,68 @@
     transform: scale(1.0);
     -webkit-transform: scale(1.0);
   }
+}
+
+.word-container{
+	white-space: nowrap;
+	overflow: hidden;
+}
+@media screen and (max-width:1000px){
+	.item-list__item{
+		width: 33.33333%;
+	}
+}
+
+@media screen and (max-width:700px){
+
+	.main-wrap{
+		margin-top: 50px;
+	}
+
+	h1:not(.artist__title){
+		text-align: center;
+	}
+
+	.menu-icon{
+		display: inline-block;
+	}
+
+	.sidebar{
+		position: fixed;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1000;
+		background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.9));
+		transform: translateX(-200px);
+		transition: transform 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000);
+	}
+
+	.open .sidebar{
+		transform: translateX(0);
+	}
+	
+	.container{
+		overflow: auto;
+		height: auto;
+	}
+
+	.main-content{
+		overflow: auto;
+	}
+}
+
+
+@media screen and (max-width:600px){
+	.item-list__item{
+		width: 50%;
+	}
+
+	.main-wrap{
+		padding: 15px;
+	}
+
+	.search-form input{
+		width: 100%;
+	}
 }

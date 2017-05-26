@@ -20,7 +20,7 @@
 	top: 0;
 	bottom: 0;
 	background: linear-gradient(to top, #191919, transparent);
-/*background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.02) 2%,rgba(0,0,0,0.15) 14%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.93) 68%,rgba(0,0,0,0.93) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
 }
 
 .artist__side{
@@ -29,7 +29,7 @@
 }
 
 .artist__details{
-	flex: 4;
+	/*flex: 4;*/
 	position: absolute;
 	z-index: 10;
 	bottom: 0;
@@ -105,18 +105,49 @@
 	content: ", ";
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 650px){
 	.artist__title{
 		font-size: 40px;
 	}
 
+	.artist__image{
+		padding-top: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.artist__image:after{
+		background: linear-gradient(to top, #191919, transparent), rgba(0,0,0,0.9);
+	}
+
+	.artist__thumbnail{
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50%;
+		height: 120px;
+		width: 120px;
+		border-radius: 50%;
+		position: relative;
+		z-index: 10;
+	}
+
+	.artist__details{
+		position: relative;
+	}
 	.artist-content, .artist-albums{
 		padding: 10px;
 	}
-
+/*
 	.artist-content .button-container{
 		display: block;
 		margin-bottom: 20px;
+	}*/
+
+	.artist__image .button-container{
+		justify-content: center;
 	}
 
 	.artist .button{
@@ -126,5 +157,6 @@
 	.genres-container{
 		margin-left: 0;
 		margin-top: 15px;
+		display: block;
 	}
 }

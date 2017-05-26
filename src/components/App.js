@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, HashRouter, Route, NavLink} from 'react-router-dom';
+import {HashRouter, Route, NavLink} from 'react-router-dom';
 import Search from './Search.js';
 import Genres from './Genres.js';
 import SingleAlbum from './albums/Single.js';

@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 import Progress from './Progress';
 import {nextTrack, prevTrack, addNotification} from '../../actions';
+import {WordSlider} from '../shared';
+import {mobileDetect} from '../../utils';
 
 import './player.css';
 
@@ -11,7 +14,7 @@ class Player extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			playing: true,
+			playing: !mobileDetect(),
 			played: 0,
 			progress: 0,
 			duration: 30
@@ -78,11 +81,16 @@ class Player extends React.Component {
 				<div className="music-player">
 					<div className="current-track">
 						<div className="current-track__image">
-							<div className="image-container" style={{backgroundImage: `url(${this.image})`}}></div>
+							<Link to={`/album/${current.album.id}`}>
+								<div className="image-container" style={{backgroundImage: `url(${this.image})`}}></div>
+							</Link>
 						</div>
 						<div className="current-track__details">
-							<h6>{current.name}</h6>
-							<h6>{current.artists[0].name}</h6>
+							<WordSlider>
+								<h6>{current.name}</h6>
+							</WordSlider>
+
+							<h6><Link to={`/artist/${current.artists[0].id}`}>{current.artists[0].name}</Link></h6>
 						</div>
 					</div>
 					<div className="player-controls">

@@ -29,6 +29,9 @@
 	opacity: 1;
 }
 
+.tracklist__full{
+	text-align: right;
+}
 .tracklist__full .button{
 	width: 75px;
 }

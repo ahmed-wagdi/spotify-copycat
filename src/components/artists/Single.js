@@ -62,6 +62,7 @@ export default class SingleArtist extends React.Component {
 			<div>
 				<div className="artist">
 					<div className="artist__image" style={{backgroundImage: `url(${artist.images.length && artist.images[0].url})`}}>
+						<div className="artist__thumbnail" style={{backgroundImage: `url(${artist.images.length && artist.images[0].url})`}}></div>
 						<div className="artist__details">
 							<p className="artist__followers">{formatNumber(artist.followers.total)} Followers</p>
 							<h1 className="artist__title">{artist.name}</h1>
