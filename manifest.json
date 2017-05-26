@@ -4,11 +4,11 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff",  
+  "background_color": "#191919",  
   "description": "A Spotify progressive web app.",
   "icons": [{
-    "src": "logo-small.png",
-    "sizes": "150x150",
+    "src": "favicon.png",
+    "sizes": "192x192",
     "type": "image/png"
   }, {
     "src": "logo.png",
