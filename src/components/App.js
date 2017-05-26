@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, NavLink} from 'react-router-dom';
+import {BrowserRouter, HashRouter, Route, NavLink} from 'react-router-dom';
 import Search from './Search.js';
 import Genres from './Genres.js';
 import SingleAlbum from './albums/Single.js';
@@ -41,7 +41,7 @@ class App extends React.Component {
 
 	render(){
 		return(
-			<BrowserRouter>
+			<HashRouter>
 				<div className="container">
 					<div className="content-wrap">
 						<Menu toggleMenu={this.toggleMenu} open={this.state.small_menu} />
@@ -57,7 +57,7 @@ class App extends React.Component {
 						</div>
 					</div>
 				</div>
-			</BrowserRouter>
+			</HashRouter>
 		);
 	}
 }

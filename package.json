@@ -2,7 +2,7 @@
   "name": "spotify-copycat",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://spotify-pwa.netlify.com/",
+  "homepage": "https://ahmed-wagdi.github.io/spotify-copycat",
   "devDependencies": {
     "gh-pages": "^1.0.0",
     "node-sass": "^4.5.0",

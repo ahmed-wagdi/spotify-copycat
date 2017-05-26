@@ -1,6 +1,6 @@
 {
-  "name": "SpotifyCopycat",
-  "short_name": "SpotifyCopycat",
+  "name": "Spotify Copycat",
+  "short_name": "Spoticat",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
