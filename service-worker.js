@@ -51,7 +51,6 @@ self.addEventListener("activate", event => {
 
 // The first time the user starts up the PWA, 'install' is triggered.
 self.addEventListener('install', function(event) {
-    console.log(true);
   if (doCache) {
     event.waitUntil(
       caches.open(CACHE_NAME)
@@ -72,7 +71,7 @@ self.addEventListener('install', function(event) {
                 assets["main.js"]
               ]
               cache.addAll(urlsToCache)
-              console.log('cached');
+              // console.log('cached');
             })
         })
     );
@@ -82,7 +81,7 @@ self.addEventListener('install', function(event) {
 // When the webpage goes to fetch files, we intercept that request and serve up the matching files
 // if we have them
 self.addEventListener('fetch', function(event) {
-  console.log(event.request.url);
+  // console.log(event.request.url);
     if (doCache) {
       event.respondWith(
           caches.match(event.request).then(function(response) {
