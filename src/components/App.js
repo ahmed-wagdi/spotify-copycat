@@ -9,39 +9,7 @@ import Home from './Home.js';
 import Player from './Player/Player.js';
 import Notifications from './Notifications/Notifications.js';
 import {connect} from 'react-redux';
-import firebase from 'firebase';
-
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBp6K4-MlkWZsVSQoFKDZOpMP-0cACwCTY",
-    authDomain: "spoticat-5e7a2.firebaseapp.com",
-    databaseURL: "https://spoticat-5e7a2.firebaseio.com",
-    projectId: "spoticat-5e7a2",
-    storageBucket: "",
-    messagingSenderId: "817416667933"
-  };
-  firebase.initializeApp(config);
-var database = firebase.database();
-console.log(database);
-database.ref('access').set('helllooo');
 import axios from 'axios';
-
-
-const client_id = "58badec970054680a1d3ca7de64f0ff1";
-const client_secret = "deed1bc1e1284a98b2d6cc00e13f1f73";
-const redirect_uri = 'http:%2F%2Flocalhost:3000';
-
-
-
-// axios.interceptors.response.use(function (response) {
-// 	console.log("everything is fine");
-// 	return response;
-// }, function (error) {
-// 	console.log("++++", error);
-// 	console.log(Promise);
-// 	// Do something with response error
-// 	return Promise.reject(error);
-// });
 
 import logo from '../images/logo.png';
 import logo_small from '../images/logo-small.png';
