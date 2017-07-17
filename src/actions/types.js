@@ -10,3 +10,10 @@ export const REMOVE_NOTIFICATION = "REMOVE_NOTIFICATION";
 /* Search Actions */
 export const SEARCH = "SEARCH";
 export const CLEAR_RESULTS = "CLEAR_RESULTS";
+
+/* Artists Actions */
+export const GET_ARTISTS = "GET_ARTISTS";
+
+/* Loader Actions */
+export const LOADER_ON = "LOADER_ON";
+export const LOADER_OFF = "LOADER_OFF";

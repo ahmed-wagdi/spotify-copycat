@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import Tracklist from '../tracks/Tracklist';
-
+import {Loader} from '../shared';
 import API_URL from '../../api';
 
 export default class SingleAlbum extends React.Component {
@@ -30,7 +30,7 @@ export default class SingleAlbum extends React.Component {
 	render(){
 		const album = this.state.album;
 		if (!album.name) {
-			return <h1>Loading</h1>
+			return <Loader />
 		}
 
 		return(

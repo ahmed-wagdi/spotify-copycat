@@ -7,6 +7,7 @@ import {Link} from 'react-router-dom';
 import API_URL from '../../api';
 import {formatNumber} from '../../utils';
 import './artist.css';
+import {Loader} from '../shared';
 
 export default class SingleArtist extends React.Component {
 	constructor(props) {
@@ -55,7 +56,7 @@ export default class SingleArtist extends React.Component {
 	render(){
 		const artist = this.state.artist;
 		if (!artist.name) {
-			return <h1>Loading</h1>
+			return <Loader />
 		}
 
 		return(

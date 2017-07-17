@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 // import {Loader} from './shared';
 import Albums from './albums/Albums';
 import ArtistList from './artists/ArtistList';
+import {Loader} from './shared';
 import {addNotification, search, clearResults} from '../actions';
 import API_URL from '../api';
 
@@ -71,7 +72,7 @@ class Search extends React.Component {
 
 	renderResults(){
 		const items = this.props.results.items;
-		if (items.length === 0 && this.refs.search && this.refs.search.value) return <p className="empty">No Results Found</p>
+		if (items.length === 0 && this.refs.search && this.refs.search.value && !this.props.loading) return <p className="empty">No Results Found</p>
 		if (items.length) {
 			return (
 				<div>
@@ -90,6 +91,7 @@ class Search extends React.Component {
 					<input type="text" placeholder="Search..." ref="search"  />
 				</form>
 				{this.renderResults()}
+				{this.props.loading && <Loader />}
 			</div>
 		);
 	}
@@ -97,7 +99,8 @@ class Search extends React.Component {
 
 function mapStateToProps(state){
 	return {
-		results: state.results
+		results: state.results,
+		loading: state.loading
 	}
 }
 export default connect(mapStateToProps, {addNotification, search, clearResults})(Search);
