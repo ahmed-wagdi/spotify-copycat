@@ -40,7 +40,7 @@
 
 .artist__title{
 	/*font-weight: 100;*/
-	font-family: helvetica neue;
+	font-family: helvetica neue, 'Open Sans';
 	font-size: 60px;
 	line-height: 1;
 	margin-bottom: 20px;

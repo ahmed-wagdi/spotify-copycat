@@ -1,5 +1,5 @@
 body {
-	font-family: helvetica neue, helvetica;
+	font-family: helvetica neue, helvetica, 'Open Sans';
 	color: #434343;
 	color: white;
 }
@@ -17,7 +17,7 @@ background: linear-gradient(to bottom, #ff9f82 0%,#ff597d 100%);
 }
 
 h1,h2,h3,h4,h5,h6, p, a{
-	font-family: helvetica neue, helvetica;
+	font-family: helvetica neue, 'Open Sans';
 	color: #434343;
 	color: white;
 }
