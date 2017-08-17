@@ -25,7 +25,7 @@ class App extends React.Component {
 	}
 	componentDidMount() {
 		axios.get("https://spoticat-node.herokuapp.com/").then(response => {
-			const access_token = response.data;
+			const access_token = response.token;
 			axios.defaults.headers.common['Authorization'] = `Bearer ${access_token}`;
 			setTimeout(() => this.setState({access_token}), 1);
 		});
